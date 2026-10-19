@@ -32,7 +32,7 @@ jobs:
         run: echo '${{ inputs.CMT_MATRIX }}' > instance-details.json
 
       - name: cmt/upload-instance-details
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: instance-details.json
           path: instance-details.json
@@ -47,7 +47,7 @@ jobs:
       TSIO_TOTAL_REPORTS_EXPECTED: ${{ steps.tsio-identity.outputs.total-reports-expected }}
     steps:
       - name: cmt/checkout-desktop
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.DESKTOP_VERSION }}
 
@@ -171,7 +171,7 @@ jobs:
       - e2e
     steps:
       # tsio-report-status.js is repo code, not fetched by github-script itself.
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.DESKTOP_VERSION }}
           persist-credentials: false
